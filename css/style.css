@@ -1,0 +1,36 @@
+section.calculator {
+	display: flex;
+	justify-content: center;
+  	position: relative;
+  	top: 50%;
+  	left: 50%;
+  	height: 97.5vh;
+  	min-width: 340px;
+  	transform: translate(-50%, -50%);
+}
+
+div.buttons {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+div.buttons:before {
+	content: ' ';
+	display: block;
+	height: 45%;
+}
+
+div.buttons > button {
+  	transform: translate(-50%, -50%);
+  	/*opacity: 0;*/
+  	cursor: pointer;
+}
+
+div.buttons > .main > button {
+	height: 33px;
+	width: 45px;
+}
