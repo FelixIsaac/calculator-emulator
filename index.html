@@ -5,6 +5,13 @@
   <meta name="description" content="Calculator emulator">
   <meta name="author" content="https://felixisaac.dev">
   <link rel="stylesheet" href="./css/style.css"/>
+	<script>
+	MathJax = {
+	  loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']},
+	};
+	</script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="./js/index.js" async type="text/javascript"></script>
 </head>
 
@@ -13,13 +20,29 @@
   	<image class="cal-image" src="./assets/calculator.png"/>
   	<div class="buttons">
   		<div class="main">
-  			<button
-  				onclick="console.log('meow')"
-  				style="margin-right: 200px"
-				>
-  				1
-  			</button>
+  			<button type="button">7</button>
+  			<button type="button">8</button>
+  			<button type="button">9</button>
+  			<button type="button">DEL</button>
+  			<button type="button">AC</button>
+  			<button type="button">4</button>
+  			<button type="button">5</button>
+  			<button type="button">6</button>
+  			<button type="button">*</button>
+  			<button type="button">/</button>
+  			<button type="button">1</button>
+  			<button type="button">2</button>
+  			<button type="button">3</button>
+  			<button type="button">+</button>
+  			<button type="button">-</button>
+  			<button type="button">0</button>
+  			<button type="button">.</button>
+  			<button type="button">x10^x</button>
+  			<button type="button">Ans</button>
+  			<button type="button">=</button>
   		</div>
   	</div>
+  </section>
+	<p id="display">``</p>
 </body>
 </html>

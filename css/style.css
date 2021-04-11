@@ -1,12 +1,12 @@
 section.calculator {
-	display: flex;
+/*	display: flex;
 	justify-content: center;
   	position: relative;
   	top: 50%;
   	left: 50%;
   	height: 97.5vh;
   	min-width: 340px;
-  	transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);*/
 }
 
 div.buttons {
@@ -21,16 +21,21 @@ div.buttons {
 div.buttons:before {
 	content: ' ';
 	display: block;
-	height: 45%;
+	/*height: 45%;*/
+	height: 266px;
 }
 
-div.buttons > button {
-  	transform: translate(-50%, -50%);
-  	/*opacity: 0;*/
-  	cursor: pointer;
+div.buttons > div.main {
+	margin-top: 135px;
+	margin-left: 27px;
+	height: 25px;
+	display: grid;
+  	grid-template-columns: 40px 40px 40px 40px 40px ;
+  	grid-column-gap: 7px;
+  	grid-row-gap: 18px;
 }
 
-div.buttons > .main > button {
-	height: 33px;
-	width: 45px;
+div.buttons > div.main > button {
+	cursor: pointer;
+	/*opacity: 0;*/
 }
