@@ -3,6 +3,12 @@ let calculator = {
 	screen: '',
 	get display () {
 		return this.screen;
+	},
+	set display(value) {
+		this.screen = value;
+		displayElement.innerHTML = `\`${value}\``
+		console.log(value);
+		MathJax.typeset();
 	}
 }
 
@@ -29,3 +35,12 @@ const input = (value) => {
 		}
 	}
 }
+
+window.MathJax = {
+  loader: {
+    load: ['input/asciimath']
+  },
+  asciimath: {
+    delimiters: [['$','$'], ['`','`']]
+  }
+};
