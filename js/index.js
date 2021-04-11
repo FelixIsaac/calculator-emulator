@@ -29,6 +29,16 @@ const input = (value) => {
 			calculator.display = "";
 			break;
 		}
+		case "x10^x": {
+			break;
+		}
+		case "Ans": {
+			break;
+		}
+		case "=": {
+			calculator.display = math.evaluate(calculator.screen);
+			break;
+		}
 		default: {
 			calculator.display += value;
 			break;
