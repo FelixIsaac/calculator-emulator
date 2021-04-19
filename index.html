@@ -10,16 +10,24 @@
 	  loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']},
 	};
 	</script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.1/math.js" integrity="sha512-Fd1dBD9iAiA2a6/hW6aJBbPCFr8ANUt9AS99aeK9vKh1LLRs1N7daoYLZ7qQ76ruhTEuA6wt6nFnHqV+QR1kQw==" crossorigin="anonymous"></script>
   <script src="./js/index.js" async type="text/javascript"></script>
+  
 </head>
 
 <body>
 	<section class="calculator">
   	<image class="cal-image" src="./assets/calculator.png"/>
   	<div class="buttons">
+  		<div class="top">
+  			<div class="selectors">
+	  			<button type="button" value="up">Go up</button>
+	  			<button type="button" value="down">Go down</button>
+	  			<button type="button" value="left">Go left</button>
+	  			<button type="button" value="right">Go right</button>
+  			</div>
+  		</div>
   		<div class="main">
   			<button type="button">7</button>
   			<button type="button">8</button>

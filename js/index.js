@@ -1,13 +1,16 @@
-let displayElement = document.getElementById("display");
-let calculator = {
+const displayElement = document.getElementById("display");
+const parser = math.parser();
+
+const calculator = {
 	screen: '',
+	selector: 0,
+	history: [],
 	get display () {
 		return this.screen;
 	},
 	set display(value) {
 		this.screen = value;
 		displayElement.innerHTML = `\`${value}\``
-		console.log(value);
 		MathJax.typeset();
 	}
 }
@@ -15,13 +18,14 @@ let calculator = {
 document.querySelectorAll("div.buttons button")
 	.forEach((button) => {
 		button.addEventListener("click", ({ target }) => {
-			input(target.innerHTML);
+			input(target.value.length ? target.value : target.innerHTML);
 		})
 	})
 
 const input = (value) => {
 	switch(value) {
 		case "DEL": {
+			const screen = calculator.display;
 			calculator.display = screen.substring(0, screen.length - 1);
 			break;
 		}
@@ -33,10 +37,16 @@ const input = (value) => {
 			break;
 		}
 		case "Ans": {
+			const previousAnswer = calculator.history[calculator.history.length - 1];
+			parser.evaluate(`Ans = ${previousAnswer}`);
+			calculator.display += "Ans";
 			break;
 		}
 		case "=": {
-			calculator.display = math.evaluate(calculator.screen);
+			const answer = parser.evaluate(calculator.screen);
+			calculator.history.push(answer);
+			calculator.display = answer;
+			console.log(parser);
 			break;
 		}
 		default: {
